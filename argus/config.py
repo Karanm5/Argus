@@ -14,13 +14,13 @@ load_dotenv()
 
 @dataclass
 class LLMConfig:
-    api_key: str = field(default_factory=lambda: os.environ["ANTHROPIC_API_KEY"])
-    model: str = "claude-sonnet-4-20250514"
+    api_key: str = field(default_factory=lambda: os.environ["GROQ_API_KEY"])
+    model: str = "llama-3.3-70b-versatile"
     max_tokens: int = 2048
-    temperature: float = 0.7          # Base temperature for reasoning
-    sampling_temperature: float = 0.9  # Higher temp for uncertainty sampling
-    n_uncertainty_samples: int = 5     # Number of samples for entropy estimation
-    uncertainty_threshold: float = 0.65  # Shannon entropy threshold (nats) to trigger re-route
+    temperature: float = 0.7
+    sampling_temperature: float = 0.9
+    n_uncertainty_samples: int = 5
+    uncertainty_threshold: float = 0.65
 
 
 @dataclass
