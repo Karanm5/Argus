@@ -14,7 +14,7 @@ load_dotenv()
 
 @dataclass
 class LLMConfig:
-    api_key: str = field(default_factory=lambda: os.environ["GROQ_API_KEY"])
+    api_key: str = field(default_factory=lambda: os.environ.get("GROQ_API_KEY", "test-key"))
     model: str = "llama-3.3-70b-versatile"
     max_tokens: int = 2048
     temperature: float = 0.7
