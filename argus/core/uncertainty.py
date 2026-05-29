@@ -108,7 +108,7 @@ class SemanticUncertaintyQuantifier:
         logger.info(f"Loading embedding model: {embedding_model}")
         self._embedder = SentenceTransformer(embedding_model)
         self._distance_threshold = clustering_distance_threshold
-        self._llm = anthropic.Anthropic(api_key=config.llm.api_key)
+        self._llm = Groq(api_key=config.llm.api_key)
         self._model = config.llm.model
         self._n_samples = config.llm.n_uncertainty_samples
         self._threshold = config.llm.uncertainty_threshold
