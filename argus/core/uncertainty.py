@@ -33,7 +33,7 @@ from dataclasses import dataclass, field
 from typing import Optional
 
 import numpy as np
-import anthropic
+from groq import Groq
 from sentence_transformers import SentenceTransformer
 from sklearn.cluster import AgglomerativeClustering
 from sklearn.metrics.pairwise import cosine_similarity
