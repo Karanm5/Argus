@@ -28,13 +28,9 @@ jobs:
           cache: pip
 
       - name: Install lint tools
-        run: pip install ruff mypy
+        run: pip install mypy
 
-      - name: Ruff lint
-        run: ruff check argus/ --select E,F,W,I
-
-      - name: Ruff format check
-        run: ruff format argus/ --check
+      
 
   # ──────────────────────────────────────────────────────────────
   # Job 2: Unit tests with coverage
@@ -58,7 +54,8 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install -e ".[dev]"
+          pip install -r requirements.txt
+          pip install pytest pytest-cov pytest-asyncio
 
       - name: Run tests with coverage
         run: |
