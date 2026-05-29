@@ -21,7 +21,7 @@ from argus.core.uncertainty import SemanticUncertaintyQuantifier, UncertaintyRes
 
 def _make_uq(n_samples: int = 5) -> SemanticUncertaintyQuantifier:
     """Create a UQ instance with a mocked LLM client."""
-    with patch("argus.core.uncertainty.anthropic.Anthropic"):
+    with patch("argus.core.uncertainty.Groq"):
         uq = SemanticUncertaintyQuantifier.__new__(SemanticUncertaintyQuantifier)
         uq._llm = MagicMock()
         uq._model = "test-model"
