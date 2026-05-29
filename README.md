@@ -263,7 +263,7 @@ Tests use mocked LLM calls — no API key required to run the test suite.
 
 ## 👤 Author
 
-**Karan Meena** — MSc Data Analytics (Distinction), Aston University  
+**Karan** — MSc Data Analytics (Distinction), Aston University  
 [LinkedIn](https://linkedin.com/in/karan-th) · [GitHub](https://github.com/Karanm5)  
 meena.karan9k@gmail.com
 
