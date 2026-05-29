@@ -220,7 +220,7 @@ class SemanticUncertaintyQuantifier:
                 text = response.content[0].text.strip()
                 responses.append(text)
                 logger.debug(f"  Sample {i+1}/{n}: {text[:80]}…")
-            except anthropic.APIError as e:
+            except Exception as e:
                 logger.warning(f"  Sample {i+1} failed: {e}.  Using placeholder.")
                 responses.append("")
 
