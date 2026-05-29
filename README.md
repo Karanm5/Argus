@@ -3,7 +3,7 @@
 [![CI](https://github.com/Karanm5/argus/actions/workflows/ci.yml/badge.svg)](https://github.com/Karanm5/argus/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Model](https://img.shields.io/badge/LLM-claude--sonnet--4-orange)
+![Model](https://img.shields.io/badge/LLM-llama--3.3--70b-orange)
 
 **ARGUS** is a self-auditing multi-agent LLM reasoning system that estimates its own epistemic uncertainty using *semantic entropy* — and re-routes to a deeper reasoning loop when that uncertainty is too high.
 
@@ -67,7 +67,7 @@ Each agent is a separate class inheriting from `BaseAgent`, orchestrated by a **
 
 ### Prerequisites
 - Python 3.10+
-- Anthropic API key (`claude-sonnet-4` access)
+- - Groq API key (free at https://console.groq.com)
 
 ### 1. Clone and install
 
@@ -81,7 +81,7 @@ pip install -e ".[dev]"
 
 ```bash
 cp .env.example .env
-# Edit .env and set ANTHROPIC_API_KEY=sk-ant-...
+# Edit .env and set GROQ_API_KEY=your_groq_key
 ```
 
 ### 3. Run the API
@@ -101,7 +101,7 @@ streamlit run frontend/app.py
 ### 5. Or use Docker Compose
 
 ```bash
-ANTHROPIC_API_KEY=your_key docker-compose up --build
+GROQ_API_KEY=your_key docker-compose up --build
 # API: http://localhost:8000
 # UI:  http://localhost:8501
 ```
@@ -234,16 +234,13 @@ Tests use mocked LLM calls — no API key required to run the test suite.
 
 ## 📦 Deployment
 
-### HuggingFace Spaces (Streamlit)
+### Streamlit Community Cloud
+1. Go to https://share.streamlit.io
+2. Connect your GitHub repo `Karanm5/Argus`
+3. Set main file path to `app.py`
+4. Add secret: `GROQ_API_KEY = "your_key"`
+5. Deploy — live in ~3 minutes
 
-1. Create a new Space (Streamlit SDK).
-2. Add `ANTHROPIC_API_KEY` as a Space secret.
-3. Push the repository:
-
-```bash
-git remote add hf https://huggingface.co/spaces/Karanm5/argus
-git push hf main
-```
 
 ### Railway / Render
 
