@@ -8,7 +8,9 @@
 **ARGUS** is a self-auditing multi-agent LLM reasoning system that estimates its own epistemic uncertainty using *semantic entropy* and re-routes to a deeper reasoning loop when that uncertainty is too high.
 
 > **Key insight:** Most LLM applications call the API once and return the first response. ARGUS samples its own outputs N times, clusters them by semantic meaning, and computes Shannon entropy over the cluster distribution. High entropy means the model is genuinely uncertain, not just phrasing things differently and triggers a multi-step remediation loop.
-Streamlit Live Demo : https://edhbimhwc9qlicnxafhpmj.streamlit.app/
+
+**Streamlit Live Demo : https://edhbimhwc9qlicnxafhpmj.streamlit.app/**
+
 ---
 
 ## 🧠 Why this is interesting
