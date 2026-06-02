@@ -1,14 +1,14 @@
-# 👁 ARGUS — Adaptive Reasoning with Guided Uncertainty Sampling
+# ARGUS - Adaptive Reasoning with Guided Uncertainty Sampling
 
 [![CI](https://github.com/Karanm5/argus/actions/workflows/ci.yml/badge.svg)](https://github.com/Karanm5/argus/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Model](https://img.shields.io/badge/LLM-llama--3.3--70b-orange)
 
-**ARGUS** is a self-auditing multi-agent LLM reasoning system that estimates its own epistemic uncertainty using *semantic entropy* — and re-routes to a deeper reasoning loop when that uncertainty is too high.
+**ARGUS** is a self-auditing multi-agent LLM reasoning system that estimates its own epistemic uncertainty using *semantic entropy* and re-routes to a deeper reasoning loop when that uncertainty is too high.
 
-> **Key insight:** Most LLM applications call the API once and return the first response. ARGUS samples its own outputs N times, clusters them by semantic meaning, and computes Shannon entropy over the cluster distribution. High entropy means the model is genuinely uncertain — not just phrasing things differently — and triggers a multi-step remediation loop.
-
+> **Key insight:** Most LLM applications call the API once and return the first response. ARGUS samples its own outputs N times, clusters them by semantic meaning, and computes Shannon entropy over the cluster distribution. High entropy means the model is genuinely uncertain, not just phrasing things differently and triggers a multi-step remediation loop.
+Streamlit Live Demo : https://edhbimhwc9qlicnxafhpmj.streamlit.app/
 ---
 
 ## 🧠 Why this is interesting
@@ -175,7 +175,7 @@ uq = SemanticUncertaintyQuantifier(
 )
 
 result = uq.estimate(
-    query="Is Schrödinger's cat actually in a superposition?",
+    query="Is Schrodinger's cat actually in a superposition?",
     n=5,
 )
 
@@ -239,15 +239,8 @@ Tests use mocked LLM calls — no API key required to run the test suite.
 2. Connect your GitHub repo `Karanm5/Argus`
 3. Set main file path to `app.py`
 4. Add secret: `GROQ_API_KEY = "your_key"`
-5. Deploy — live in ~3 minutes
+5. Deployed
 
-
-### Railway / Render
-
-```bash
-# Set env vars: ANTHROPIC_API_KEY, PORT
-# Start command: uvicorn argus.api.main:app --host 0.0.0.0 --port $PORT
-```
 
 ---
 
